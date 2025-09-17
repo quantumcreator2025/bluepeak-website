@@ -55,15 +55,24 @@
             align-items: center;
         }
         
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color);
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
         
         nav ul {
@@ -177,84 +186,6 @@
             color: var(--primary-color);
         }
         
-        /* Properties Section */
-        .properties-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .property-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        
-        .property-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .property-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .property-content {
-            padding: 20px;
-        }
-        
-        .property-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .property-content p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-        
-        .property-content .price {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-        
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-card i {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-        
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        
         /* About Section */
         .about-content {
             display: flex;
@@ -333,10 +264,26 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         
-        .team-member img {
+        .team-member-img-container {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .team-member-img-container img {
             width: 100%;
-            height: 250px;
+            height: 100%;
             object-fit: cover;
+            object-position: center top;
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover .team-member-img-container img {
+            transform: scale(1.05);
         }
         
         .team-info {
@@ -354,94 +301,92 @@
             font-size: 0.9rem;
         }
         
-        /* Contact Section */
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
+        /* Properties Section */
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-form h3 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .contact-info h3 {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-        
-        .info-item i {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .info-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-        
-        .info-item p {
-            color: #555;
-        }
-        
-        .map-container {
-            margin-top: 30px;
+        .property-card {
+            background-color: white;
             border-radius: 10px;
             overflow: hidden;
-            height: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
         
-        .map-container iframe {
+        .property-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .property-img-container {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .property-img {
             width: 100%;
             height: 100%;
-            border: 0;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .property-card:hover .property-img {
+            transform: scale(1.05);
+        }
+        
+        .property-content {
+            padding: 20px;
+        }
+        
+        .property-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .property-content p {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .property-content .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
         }
         
         /* Footer Styles */
@@ -464,9 +409,18 @@
             margin-bottom: 20px;
         }
         
-        .footer-logo img {
+        .footer-logo-icon {
+            width: 40px;
             height: 40px;
+            background-color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-right: 10px;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1rem;
         }
         
         .footer-logo h3 {
@@ -530,6 +484,11 @@
             background-color: var(--secondary-color);
         }
         
+        .x-icon {
+            width: 20px;
+            height: 20px;
+        }
+        
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -566,8 +525,7 @@
                 font-size: 2rem;
             }
             
-            .about-content,
-            .contact-container {
+            .about-content {
                 flex-direction: column;
             }
         }
@@ -578,7 +536,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="https://z-cdn-media.chatglm.cn/files/dc75e427-7907-40d4-abc9-1b2d57f7c017_Bluepeak%20Logo.PNG?auth_key=1788078668-9ccfb11475c54766928919cacb427a66-0-7dfbb08645434cb3c2b990cfe065fbea" alt="Bluepeak Realtors Logo">
+                <div class="logo-icon">BP</div>
                 <div class="logo-text">Bluepeak Realtors</div>
             </div>
             <nav>
@@ -587,7 +545,6 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#properties">Properties</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -596,9 +553,9 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Buy, Sell, and Rent Properties in Mumbai with Confidence</h1>
-            <p>Explore the latest listings in Mumbai. Our team connects you with the best residential and commercial spaces—whether you’re searching for your dream home or a smart investment.</p>
-            <a href="#contact" class="btn">Contact Us for Personalised Property Assistance</a>
+            <h1>Buy, Sell and Rent Properties in Mumbai with Confidence</h1>
+            <p>Explore the latest listings in Mumbai. Our team connects you with the best residential and commercial spaces—whether you're searching for your dream home or a smart investment.</p>
+            <a href="#properties" class="btn">View Our Properties</a>
         </div>
     </section>
 
@@ -607,14 +564,9 @@
         <div class="container">
             <div class="section-title">
                 <h2>Why Choose Bluepeak Realtors</h2>
-                <p>We provide exceptional real estate services with a focus on client satisfaction and transparency</p>
+                <p>We provide exceptional real estate services with a focus on<br>client satisfaction and transparency.</p>
             </div>
             <div class="usp-grid">
-                <div class="usp-card">
-                    <i class="fas fa-award"></i>
-                    <h3>10+ Years Experience</h3>
-                    <p>Trusted real estate consultancy serving Mumbai clients with expertise and integrity</p>
-                </div>
                 <div class="usp-card">
                     <i class="fas fa-handshake"></i>
                     <h3>Transparent Process</h3>
@@ -630,6 +582,80 @@
                     <h3>Market Expertise</h3>
                     <p>In-depth knowledge of Mumbai's dynamic real estate market and trends</p>
                 </div>
+                <div class="usp-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Quality Service</h3>
+                    <p>Committed to excellence in every aspect of our real estate services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <p>Learn about our journey, values, and commitment to excellence in real estate</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3><br></h3>
+                    <p>At Bluepeak Realtors, we're here to simplify the real estate journey for buyers, sellers and investors across Mumbai. With a clear focus on transparency, trust and personalized service, our goal is to make property transactions smooth and hassle-free.</p>
+                    <p>We may be a young brand, but our vision is strong — to combine ethical practices with modern solutions, ensuring that every client finds the right property with confidence. Whether you're looking to buy, sell or invest, we're committed to guiding you at every step with honest advice and dedicated support.</p>
+                    
+                    <h3 style="margin-top: 40px;">Our Values</h3>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Integrity</h4>
+                            <p>We put ethics at the heart of everything we do.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-star"></i>
+                            <h4>Excellence</h4>
+                            <p>We strive to deliver quality service with attention to detail.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Innovation</h4>
+                            <p>We embrace technology to create a better property experience.</p>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-heart"></i>
+                            <h4>Trust</h4>
+                            <p>We focus on building lasting relationships with our clients.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Real Estate Team">
+                </div>
+            </div>
+            
+            <div class="section-title" style="margin-top: 60px;">
+                <h2>Our Team</h2>
+                <p>Meet the founders of Bluepeak Realtors</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-img-container">
+                        <img src="https://via.placeholder.com/300x300/4a7db5/ffffff?text=Manish+Rabhadia" alt="Manish Rabhadia">
+                    </div>
+                    <div class="team-info">
+                        <h3>Manish Rabhadia</h3>
+                        <p>Co-founder</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-img-container">
+                        <img src="https://via.placeholder.com/300x300/4a7db5/ffffff?text=Priyanka+Rabhadia" alt="Priyanka Rabhadia">
+                    </div>
+                    <div class="team-info">
+                        <h3>Priyanka Rabhadia</h3>
+                        <p>Co-founder</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -643,112 +669,36 @@
             </div>
             <div class="properties-grid">
                 <div class="property-card">
-                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                    <div class="property-img-container">
+                        <img class="property-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Luxury Apartment in Bandra">
+                    </div>
                     <div class="property-content">
                         <h3>Luxury Apartment in Bandra</h3>
                         <p>3 BHK | 1850 sq. ft. | Sea View</p>
                         <div class="price">₹ 4.25 Cr</div>
-                        <a href="#contact" class="btn">Enquire Now</a>
+                        <a href="#services" class="btn">Enquire Now</a>
                     </div>
                 </div>
                 <div class="property-card">
-                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                    <div class="property-img-container">
+                        <img class="property-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Modern Office in Andheri">
+                    </div>
                     <div class="property-content">
                         <h3>Modern Office in Andheri</h3>
                         <p>Commercial | 2500 sq. ft. | Fully Furnished</p>
                         <div class="price">₹ 3.5 Cr</div>
-                        <a href="#contact" class="btn">Enquire Now</a>
+                        <a href="#services" class="btn">Enquire Now</a>
                     </div>
                 </div>
                 <div class="property-card">
-                    <div class="property-img" style="background-image: url('https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');"></div>
+                    <div class="property-img-container">
+                        <img class="property-img" src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Premium Villa in Juhu">
+                    </div>
                     <div class="property-content">
                         <h3>Premium Villa in Juhu</h3>
                         <p>4 BHK | 3200 sq. ft. | Private Garden</p>
                         <div class="price">₹ 8.75 Cr</div>
-                        <a href="#contact" class="btn">Enquire Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Bluepeak Realtors</h2>
-                <p>Learn about our journey, values, and commitment to excellence in real estate</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>A Trusted Real Estate Partner Since 2013</h3>
-                    <p>Bluepeak Realtors is a trusted real estate consultancy helping Mumbai clients for over 10 years. Founded with a vision to simplify property transactions, we have established ourselves as a reliable partner for buyers, sellers, and investors across Mumbai's dynamic real estate landscape.</p>
-                    <p>Our mission is to provide transparent, honest advice and make property decisions easy for buyers, sellers, and investors. We believe in building long-term relationships based on trust and exceptional service.</p>
-                    <div class="values-grid">
-                        <div class="value-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <h4>Integrity</h4>
-                            <p>Ethical practices in all our dealings</p>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-star"></i>
-                            <h4>Excellence</h4>
-                            <p>Delivering the highest quality service</p>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-lightbulb"></i>
-                            <h4>Innovation</h4>
-                            <p>Embracing technology for better client experiences</p>
-                        </div>
-                        <div class="value-item">
-                            <i class="fas fa-heart"></i>
-                            <h4>Trust</h4>
-                            <p>Building long-term relationships based on reliability</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Real Estate Team">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Team</h2>
-                <p>Meet our experienced real estate professionals dedicated to serving you</p>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Team Member">
-                    <div class="team-info">
-                        <h3>Rahul Sharma</h3>
-                        <p>Founder & CEO</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1768&q=80" alt="Team Member">
-                    <div class="team-info">
-                        <h3>Priya Patel</h3>
-                        <p>Senior Property Consultant</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80" alt="Team Member">
-                    <div class="team-info">
-                        <h3>Amit Singh</h3>
-                        <p>Investment Advisor</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Team Member">
-                    <div class="team-info">
-                        <h3>Neha Desai</h3>
-                        <p>Legal & Documentation Expert</p>
+                        <a href="#services" class="btn">Enquire Now</a>
                     </div>
                 </div>
             </div>
@@ -788,91 +738,10 @@
                     <h3>Legal/Document Help</h3>
                     <p>Easy, safe paperwork for stress-free deals. Our legal experts ensure all property documentation is accurate and compliant with regulations, giving you peace of mind throughout the transaction process.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch with our team for personalized property assistance</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-form">
-                    <h3>Ready to talk? Enter your details and our team will reach out within 24 hours.</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Interested In</label>
-                            <select id="service" name="service">
-                                <option value="buying">Buying Property</option>
-                                <option value="selling">Selling Property</option>
-                                <option value="renting">Renting Property</option>
-                                <option value="investment">Investment Advisory</option>
-                                <option value="loan">Home Loan Assistance</option>
-                                <option value="legal">Legal Documentation</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your property requirements..."></textarea>
-                        </div>
-                        <button type="submit" class="btn">Submit Request</button>
-                    </form>
-                </div>
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Office Address</h4>
-                            <p>Bluepeak Realtors, 123, Real Estate Plaza, Borivali West, Mumbai - 400092</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 98765 43210</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@bluepeakrealtors.com</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p>+91 98765 43210</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Business Hours</h4>
-                            <p>Monday to Saturday: 9:30 AM to 7:00 PM<br>Sunday: Closed</p>
-                        </div>
-                    </div>
-                    <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.843354312939!2d72.8478!3d19.2317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDEzJzU0LjEiTiA3MsKwNTAnNDQuMSJF!5e0!3m2!1sen!2sin!4v1629367896543!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
-                    </div>
+                <div class="service-card">
+                    <i class="fas fa-th-large"></i>
+                    <h3>Anything &amp; Everything</h3>
+                    <p>From guidance to ground-level support — if it's related to property, we're here to help. Be it valuations, resale assistance, interior connections, relocation support, or any other property need, Bluepeak is your trusted one-stop real estate partner.</p>
                 </div>
             </div>
         </div>
@@ -884,13 +753,17 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="https://z-cdn-media.chatglm.cn/files/dc75e427-7907-40d4-abc9-1b2d57f7c017_Bluepeak%20Logo.PNG?auth_key=1788078668-9ccfb11475c54766928919cacb427a66-0-7dfbb08645434cb3c2b990cfe065fbea" alt="Bluepeak Realtors Logo">
+                        <div class="footer-logo-icon">BP</div>
                         <h3>Bluepeak Realtors</h3>
                     </div>
-                    <p>Trusted real estate consultancy in Mumbai since 2013. We help you buy, sell, and rent properties with confidence.</p>
+                    <p>Your trusted real estate partner in Mumbai — helping you buy, sell, rent and invest with confidence.</p>
                     <div class="social-icons">
-                        <a href="https://instagram.com/bluepeakrealtors" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://youtube.com/bluepeakrealtors" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/bluepeakrealtor/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://x.com/bluepeakrealtor" target="_blank">
+                            <svg class="x-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                            </svg>
+                        </a>
                         <a href="https://linkedin.com/company/bluepeakrealtors" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -901,13 +774,12 @@
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#properties">Properties</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#services">Buying & Selling</a></li>
+                        <li><a href="#services">Buying &amp; Selling</a></li>
                         <li><a href="#services">Property Rentals</a></li>
                         <li><a href="#services">Investment Advisory</a></li>
                         <li><a href="#services">Home Loan Assistance</a></li>
@@ -917,15 +789,15 @@
                 <div class="footer-column">
                     <h4>Contact Info</h4>
                     <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123, Real Estate Plaza, Borivali West, Mumbai - 400092</li>
-                        <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
-                        <li><i class="fas fa-envelope"></i> info@bluepeakrealtors.com</li>
-                        <li><i class="fas fa-certificate"></i> MAHARERA Registration No.: A51800012345</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Borivali, Mumbai</li>
+                        <li><i class="fas fa-phone-alt"></i> +91 96197 66033</li>
+                        <li><i class="fas fa-envelope"></i> bluepeak.realtors@gmail.com</li>
+                        <li><i class="fas fa-certificate"></i> MAHARERA Registration No.: 39085880101217</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Bluepeak Realtors. All Rights Reserved. | <a href="#" style="color: #aaa;">Privacy Policy</a> | <a href="#" style="color: #aaa;">Terms of Service</a></p>
+                <p>© 2025 Bluepeak Realtors. All Rights Reserved. | <a href="#" style="color: #aaa;">Privacy Policy</a> | <a href="#" style="color: #aaa;">Terms of Service</a></p>
             </div>
         </div>
     </footer>
@@ -939,13 +811,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-        
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your inquiry! Our team will contact you within 24 hours.');
-            this.reset();
         });
     </script>
 </body>
